@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
+            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{C5040323-CF67-46C5-85AA-3DDC73F0B9C5}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>DpqApi</RootNamespace>
+        <AssemblyName>DpqApi</AssemblyName>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="0Harmony">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\BepInEx\core\0Harmony.dll</HintPath>
+        </Reference>
+        <Reference Include="Assembly-CSharp">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test (1)a\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Assembly-CSharp.dll</HintPath>
+        </Reference>
+        <Reference Include="Assembly-CSharp-firstpass">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test (1)a\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+        </Reference>
+        <Reference Include="BepInEx">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\BepInEx\core\BepInEx.dll</HintPath>
+        </Reference>
+        <Reference Include="BepInEx.Harmony">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\BepInEx\core\BepInEx.Harmony.dll</HintPath>
+        </Reference>
+        <Reference Include="BepInEx.Preloader">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\BepInEx\core\BepInEx.Preloader.dll</HintPath>
+        </Reference>
+        <Reference Include="CTNAudio">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\CTNAudio.dll</HintPath>
+        </Reference>
+        <Reference Include="HarmonyXInterop">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\BepInEx\core\HarmonyXInterop.dll</HintPath>
+        </Reference>
+        <Reference Include="kcp2k">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\kcp2k.dll</HintPath>
+        </Reference>
+        <Reference Include="MidiPlayer.Demo">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\MidiPlayer.Demo.dll</HintPath>
+        </Reference>
+        <Reference Include="MidiPlayer.Editor">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\MidiPlayer.Editor.dll</HintPath>
+        </Reference>
+        <Reference Include="MidiPlayer.Run">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\MidiPlayer.Run.dll</HintPath>
+        </Reference>
+        <Reference Include="Mirror">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Mirror.dll</HintPath>
+        </Reference>
+        <Reference Include="Mirror.Authenticators">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Mirror.Authenticators.dll</HintPath>
+        </Reference>
+        <Reference Include="Mirror.BouncyCastle.Cryptography">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Mirror.BouncyCastle.Cryptography.dll</HintPath>
+        </Reference>
+        <Reference Include="Mirror.Components">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Mirror.Components.dll</HintPath>
+        </Reference>
+        <Reference Include="Mirror.Examples">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Mirror.Examples.dll</HintPath>
+        </Reference>
+        <Reference Include="Mirror.Transports">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Mirror.Transports.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Cecil">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\BepInEx\core\Mono.Cecil.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Cecil.Mdb">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\BepInEx\core\Mono.Cecil.Mdb.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Cecil.Pdb">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\BepInEx\core\Mono.Cecil.Pdb.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Cecil.Rocks">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\BepInEx\core\Mono.Cecil.Rocks.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Security">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Mono.Security.dll</HintPath>
+        </Reference>
+        <Reference Include="MonoMod.RuntimeDetour">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\BepInEx\core\MonoMod.RuntimeDetour.dll</HintPath>
+        </Reference>
+        <Reference Include="MonoMod.Utils">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\BepInEx\core\MonoMod.Utils.dll</HintPath>
+        </Reference>
+        <Reference Include="Newtonsoft.Json">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Newtonsoft.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="SimpleWebTransport">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\SimpleWebTransport.dll</HintPath>
+        </Reference>
+        <Reference Include="System"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.Xml"/>
+        <Reference Include="taglib-sharp">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\taglib-sharp.dll</HintPath>
+        </Reference>
+        <Reference Include="Telepathy">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Telepathy.dll</HintPath>
+        </Reference>
+        <Reference Include="ThunkMonkey.FluidMidi.Runtime">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\ThunkMonkey.FluidMidi.Runtime.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.Burst">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Unity.Burst.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.Burst.Unsafe">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Unity.Burst.Unsafe.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.Collections">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Unity.Collections.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.Collections.LowLevel.ILSupport">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.Mathematics">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Unity.Mathematics.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.Netcode.Components">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Unity.Netcode.Components.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.Netcode.Runtime">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Unity.Netcode.Runtime.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.Networking.Transport">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Unity.Networking.Transport.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.Postprocessing.Runtime">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Unity.Postprocessing.Runtime.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.RenderPipelines.Core.Runtime">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.TextMeshPro">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.Timeline">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\Unity.Timeline.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AccessibilityModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.AccessibilityModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AIModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.AIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AndroidJNIModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.AndroidJNIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AnimationModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ARModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.ARModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AssetBundleModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AudioModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AutoStreamingModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.AutoStreamingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ClothModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.ClothModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ClusterInputModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.ClusterInputModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ClusterRendererModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.ClusterRendererModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CrashReportingModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.CrashReportingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.DirectorModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.DirectorModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.DSPGraphModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.DSPGraphModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.GameCenterModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.GameCenterModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.GIModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.GIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.GridModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.GridModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.HotReloadModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.HotReloadModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ImageConversionModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.IMGUIModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.InputLegacyModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.InputModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.InputModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.JSONSerializeModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.LocalizationModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.LocalizationModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.NVIDIAModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.NVIDIAModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ParticleSystemModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.PerformanceReportingModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.PerformanceReportingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.Physics2DModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.PhysicsModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ProfilerModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.ProfilerModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ScreenCaptureModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.ScreenCaptureModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.SharedInternalsModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.SharedInternalsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.SpriteMaskModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.SpriteMaskModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.SpriteShapeModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.SpriteShapeModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.StreamingModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.StreamingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.SubstanceModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.SubstanceModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.SubsystemsModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.SubsystemsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TerrainModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TerrainPhysicsModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TextCoreFontEngineModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TextCoreTextEngineModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TextRenderingModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TilemapModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.TilemapModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TLSModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.TLSModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UI">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.UI.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UIElementsModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UIElementsNativeModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.UIElementsNativeModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UIModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UIWidgetsModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.UIWidgetsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UmbraModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.UmbraModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UNETModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.UNETModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityAnalyticsModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityConnectModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.UnityConnectModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityCurlModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.UnityCurlModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityTestProtocolModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VehiclesModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.VehiclesModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VFXModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.VFXModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VideoModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VirtualTexturingModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.VirtualTexturingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VRModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.VRModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.WindModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.WindModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.XRModule">
+          <HintPath>F:\msedgedl\DOSR20_Windows_Test\DOSR20\Dpqpqp's Opening School Remastered_Data\Managed\UnityEngine.XRModule.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="AssetManager.cs" />
+        <Compile Include="BasePlugin.cs" />
+        <Compile Include="BruceEvent.cs" />
+        <Compile Include="DpqpqpRandomEvent.cs" />
+        <Compile Include="GameControllerPatch.cs" />
+        <Compile Include="Item.cs" />
+        <Compile Include="ItemBuilder.cs" />
+        <Compile Include="ItemManager.cs" />
+        <Compile Include="ModdedRandomEventManager.cs" />
+        <Compile Include="ModLoaderScreen.cs" />
+        <Compile Include="NPC.cs" />
+        <Compile Include="ObjectCreator.cs" />
+        <Compile Include="OptionsAPI.cs" />
+        <Compile Include="PrefabBuilder.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="RandomEvent.cs" />
+        <Compile Include="Register.cs" />
+        <Compile Include="StudentEvent.cs" />
+        <Compile Include="SXPEvent.cs" />
+        <Compile Include="UiHelper.cs" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>
